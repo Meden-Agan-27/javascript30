@@ -133,12 +133,14 @@
       console.log('Hello');
       this.classList.toggle('open');
     }
-  function toggleOpenActive(e) {
+  function toggleActive(e) {
       console.log('World');
-      this.classList.toggle('open-active');
-    }
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    };
   panels.forEach(panel => panel.addEventListener('click', toggleOpen));
-  panels.forEach(panel => panel.addEventListener('transitionend', toggleOpenActive));
+  panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
   </script>
 
 
