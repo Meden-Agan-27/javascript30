@@ -133,12 +133,12 @@
       console.log('Hello');
       this.classList.toggle('open');
     }
-  function toggleOpenActive() {
+  function toggleOpenActive(e) {
       console.log('World');
       this.classList.toggle('open-active');
     }
   panels.forEach(panel => panel.addEventListener('click', toggleOpen));
-  panels.forEach(panel => panel.addEventListener('click', toggleOpenActive));
+  panels.forEach(panel => panel.addEventListener('transitionend', toggleOpenActive));
   </script>
 
 
